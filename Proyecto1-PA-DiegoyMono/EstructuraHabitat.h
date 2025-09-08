@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include "pch.h"
 
 using namespace std;
@@ -6,5 +6,17 @@ using namespace std;
 struct Habitat {
 	int IDHabitat;
 	string tipoHabitat;
-	string animales[1]; //Inicializamos despues el tamaño
+	vector<Animal*> animalesAsignados;
+};*/
+
+#pragma once
+#include <string>
+#include <vector>
+#include "ClaseAnimal.h"
+using namespace std;
+
+struct Habitat {
+	int IDHabitat = 0;
+	string tipoHabitat = "";
+	vector<Animal*> animalesAsignados;
 };
