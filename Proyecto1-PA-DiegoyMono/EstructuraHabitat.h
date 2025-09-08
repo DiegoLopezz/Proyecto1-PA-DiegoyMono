@@ -1,14 +1,3 @@
-/*#include <iostream>
-#include "pch.h"
-
-using namespace std;
-
-struct Habitat {
-	int IDHabitat;
-	string tipoHabitat;
-	vector<Animal*> animalesAsignados;
-};*/
-
 #pragma once
 #include <string>
 #include <vector>

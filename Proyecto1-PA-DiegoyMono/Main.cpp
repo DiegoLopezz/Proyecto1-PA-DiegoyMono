@@ -1,43 +1,3 @@
-/*#include <iostream>
-#include <string>
-#include "ClaseAnimal.h"
-#include "Animal-Hijas.h"
-#include "ClaseZoologico.h"
-#include "EstructuraHabitat.h"
-using namespace std;
-
-int cantidadAnimales(int numAnimales) { //pide al usuario que ingrese la cantidad de animales que desea crear
-	cout << "Indique la cantidad de animales que desea crear: ";
-	cin >> numAnimales;
-    return numAnimales;
-}
-int cantidadHabitats(int numHabitats){ //pide al ususario que ingrese la cantidad de habitats que desea crear
-    cout << "Indique la cantidad de habitats que desea crear: ";
-}
-void crearHabitatsRandom(int numHabitats, string tiposHabitat[], vector<string>& Habitats){ //crea habitats random, segun la cantidad que se desea crear
-    int random;
-
-    for(int i = 0; i < numHabitats; i++){
-		random = 0 + rand() % 4;
-
-        Habitats.push_back(tiposHabitat[random]);
-    }
-}
-void cantidadDiasSimulacion(){
-
-}
-
-int main(){
-    int numAnimales;
-    int numHabitats;
-    int numDias;
-    int eleccion;
-    string tiposAnimal[] = { "Ave", "Mamifero", "Reptil", "Pez", "Anfibio" };
-    string tiposHabitat[] = { "Aviario", "Acuario", "Laguna", "Bosque" };
-
-    
-    return 0;
-}*/
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -73,14 +33,15 @@ int main() {
         Animal* nuevoAnimal = nullptr;
 
         switch (tipo) {
-        case 0: nuevoAnimal = new Ave(i + 1, precio); break;
+        case 0: nuevoAnimal = new Ave(i + 1, precio); break; //asigna los ids por i + 1 para empezar en 1
         case 1: nuevoAnimal = new Mamifero(i + 1, precio); break;
         case 2: nuevoAnimal = new Reptil(i + 1, precio); break;
         case 3: nuevoAnimal = new Pez(i + 1, precio); break;
         case 4: nuevoAnimal = new Anfibio(i + 1, precio); break;
         }
 
-        int habitatAsignado = 1 + rand() % numHabitats;
+        int habitatAsignado = 1 + rand() % numHabitats; //hace un rango de numero aleatorios de numHabitats, por ejemplo numHabitats = 4, rango fde numeros aleatorios = 0,1,2,3
+        //+1 porque no tratamos con 0 habitats asignados
         zoo.asignarAnimal(nuevoAnimal, habitatAsignado);
     }
 
@@ -89,7 +50,7 @@ int main() {
 
     // Bucle de simulación
     for (int dia = 1; dia <= numDias; dia++) {
-        cout << "\n===== DIA " << dia << " =====" << endl;
+        cout << "\n------ DIA " << dia << " -----" << endl;
 
         int opcion;
         do {
